@@ -18,7 +18,7 @@ export default function FeaturesPage() {
 
         <div className="flex flex-col gap-16">
           {/* Smart Analytics */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 p-12 glass items-center animate-fade-in delay-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 p-12 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl shadow-xl items-center animate-fade-in delay-100">
             <div>
               <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-6">
                 <PieChart />
@@ -41,7 +41,7 @@ export default function FeaturesPage() {
           </div>
 
           {/* Donation Management */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 p-12 glass items-center animate-fade-in delay-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 p-12 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl shadow-xl items-center animate-fade-in delay-200">
             <div className="lg:order-2">
               <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-6">
                 <Heart />
@@ -75,7 +75,7 @@ export default function FeaturesPage() {
                 { icon: <Download className="text-emerald-400" size={32} />, title: 'Export Data', desc: 'Download your financial data as CSV for external analysis.' },
                 { icon: <Smartphone className="text-amber-400" size={32} />, title: 'PWA Support', desc: 'Install on your phone and use it like a native app.' },
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-2xl text-center glass hover:bg-slate-800/50 transition-colors">
+                <div key={i} className="p-8 rounded-2xl text-center bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl hover:bg-slate-800/50 transition-colors">
                   <div className="mb-4 flex justify-center">{item.icon}</div>
                   <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
                   <p className="text-slate-300 text-sm">{item.desc}</p>

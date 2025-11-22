@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00b98d;
-  --color-primary-hover: #00a37c;
-  --color-secondary: #0f172a;
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-secondary: #003f5f;
   --color-accent: #38bdf8;
   
   --color-glass-bg: rgba(30, 41, 59, 0.7);
@@ -24,8 +24,12 @@
 }
 
 @layer base {
+  * {
+    font-family: 'Inter', sans-serif;
+  }
+  
   body {
-    @apply bg-slate-950 text-slate-300 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200;
+    @apply bg-gradient-to-br from-slate-900 via-slate-800/50 to-slate-900 text-slate-300 antialiased selection:bg-[--color-primary]/30 selection:text-white;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -34,8 +38,23 @@
 }
 
 @layer utilities {
+  /* Glassmorphism for cards and containers */
   .glass {
     @apply bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+  
+  /* Stronger glass effect for navbar/sidebar */
+  .glass-navbar {
+    @apply bg-slate-900/80 backdrop-blur-xl border-b border-white/5;
+  }
+  
+  /* Light mode glass (for future use) */
+  .glass-light {
+    @apply bg-white/60 backdrop-blur-xl border border-black/5;
+  }
+  
+  .glass-navbar-light {
+    @apply bg-white/80 backdrop-blur-xl border-b border-black/5;
   }
   
   .text-gradient {
@@ -51,6 +70,6 @@
   }
   
   .btn-outline {
-    @apply border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white hover:bg-slate-800/50;
+    @apply border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white hover:bg-slate-800/50 rounded-xl;
   }
 }

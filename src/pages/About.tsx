@@ -9,7 +9,7 @@ export default function About() {
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">We believe that managing shared finances should be transparent, fair, and stress-free.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 p-12 rounded-3xl mb-16 items-center glass animate-fade-in delay-100">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 p-12 rounded-3xl mb-16 items-center bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl animate-fade-in delay-100">
           <div className="mission-content">
             <h2 className="text-3xl font-bold mb-6 text-[--color-primary]">Our Mission</h2>
             <p className="text-lg leading-relaxed text-slate-400">
@@ -31,17 +31,17 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl text-center glass animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
+          <div className="p-8 rounded-2xl text-center bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
             <Users className="text-[--color-primary] mx-auto mb-6" size={32} />
             <h3 className="text-2xl font-bold mb-4 text-white">Built for Partners</h3>
             <p className="text-slate-400">Designed specifically for two people managing one financial life together.</p>
           </div>
-          <div className="p-8 rounded-2xl text-center glass animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
+          <div className="p-8 rounded-2xl text-center bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
             <Shield className="text-[--color-primary] mx-auto mb-6" size={32} />
             <h3 className="text-2xl font-bold mb-4 text-white">Privacy First</h3>
             <p className="text-slate-400">Your data lives on your device. We don't sell your financial history.</p>
           </div>
-          <div className="p-8 rounded-2xl text-center glass animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
+          <div className="p-8 rounded-2xl text-center bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl animate-fade-in delay-200 hover:-translate-y-1 transition-transform duration-300">
             <Heart className="text-[--color-primary] mx-auto mb-6" size={32} />
             <h3 className="text-2xl font-bold mb-4 text-white">Open Source</h3>
             <p className="text-slate-400">Created by Bukhtyar Haider as a free gift to the community.</p>

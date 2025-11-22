@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative pt-40 pb-32 overflow-hidden">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
         <div className="animate-fade-in">
-          <div className="inline-flex items-center gap-3 px-5 py-2 bg-[rgba(0,185,141,0.1)] border border-[rgba(0,185,141,0.2)] rounded-full text-[--color-primary] text-sm font-semibold mb-8 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-5 py-2 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full text-[--color-primary] text-sm font-semibold mb-8">
             <span className="w-2 h-2 bg-[--color-primary] rounded-full shadow-[0_0_12px_var(--color-primary)] animate-pulse"></span>
             Free & Open Source
           </div>
@@ -61,11 +61,11 @@ export default function Hero() {
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute top-[15%] -right-10 px-8 py-5 rounded-2xl flex flex-col gap-2 bg-slate-800/90 backdrop-blur-xl border border-slate-700 shadow-2xl animate-[float_6s_ease-in-out_infinite] z-20 hidden lg:flex">
+            <div className="absolute top-[15%] -right-10 px-8 py-5 rounded-2xl flex flex-col gap-2 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-2xl animate-[float_6s_ease-in-out_infinite] z-20 hidden lg:flex">
               <span className="text-sm text-slate-400 uppercase tracking-wider">Total Capital</span>
               <strong className="text-2xl text-white font-bold">$124,500</strong>
             </div>
-            <div className="absolute bottom-[15%] -left-10 px-8 py-5 rounded-2xl flex flex-col gap-2 bg-slate-800/90 backdrop-blur-xl border border-slate-700 shadow-2xl animate-[float_6s_ease-in-out_infinite_3s] z-20 hidden lg:flex">
+            <div className="absolute bottom-[15%] -left-10 px-8 py-5 rounded-2xl flex flex-col gap-2 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-2xl animate-[float_6s_ease-in-out_infinite_3s] z-20 hidden lg:flex">
               <span className="text-sm text-slate-400 uppercase tracking-wider">Donations</span>
               <strong className="text-2xl text-white font-bold">$12,400</strong>
             </div>
@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-[radial-gradient(circle,rgba(0,185,141,0.08)_0%,rgba(56,189,248,0.03)_30%,transparent_70%)] z-0 pointer-events-none blur-[80px]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-[radial-gradient(circle,rgba(0,185,141,0.08)_0%,rgba(0,63,95,0.03)_30%,transparent_70%)] z-0 pointer-events-none blur-[80px]"></div>
     </section>
   );
 }

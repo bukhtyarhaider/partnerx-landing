@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-slate-800/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} PartnerWise Financial Management. Created by <a href="https://github.com/bukhtyarhaider" target="_blank" rel="noopener noreferrer" className="text-[--color-primary] hover:text-emerald-300">Bukhtyar Haider</a>.</p>
+          <p>&copy; {new Date().getFullYear()} PartnerX Financial Management. Created by <a href="https://github.com/bukhtyarhaider" target="_blank" rel="noopener noreferrer" className="text-[--color-primary] hover:text-emerald-300">Bukhtyar Haider</a>.</p>
           <div className="flex gap-6">
             <a href="#" aria-label="Github" className="hover:text-[--color-primary] transition-colors"><Github size={20} /></a>
             <a href="#" aria-label="Twitter" className="hover:text-[--color-primary] transition-colors"><Twitter size={20} /></a>

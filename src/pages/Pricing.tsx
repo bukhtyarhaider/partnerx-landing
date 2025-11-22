@@ -29,7 +29,7 @@ export default function Pricing() {
             </a>
           </div>
 
-          <div className="p-12 rounded-3xl glass transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl animate-fade-in delay-200">
+          <div className="p-12 rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl animate-fade-in delay-200">
             <div className="text-center mb-10 pb-10 border-b border-slate-700/50">
               <h3 className="text-3xl font-bold mb-4 text-white">Sponsor</h3>
               <div className="text-6xl font-extrabold text-white flex items-center justify-center h-[60px]"><Heart size={48} className="text-[--color-primary]" /></div>

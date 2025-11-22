@@ -81,7 +81,7 @@ function FeatureCard({ feature }: { feature: any }) {
       ref={divRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative p-10 rounded-3xl bg-slate-800/30 border border-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800/50 hover:border-[rgba(0,185,141,0.3)] hover:shadow-2xl group"
+      className="relative p-10 rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800/50 hover:border-[rgba(0,185,141,0.3)] hover:shadow-2xl group"
     >
       <div 
         className="pointer-events-none absolute -inset-px transition-opacity duration-500"

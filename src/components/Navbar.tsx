@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 h-20 z-50 border-b transition-all duration-300 ${
       scrolled 
-        ? 'bg-slate-950/80 backdrop-blur-xl border-slate-800/60 shadow-lg' 
+        ? 'bg-slate-800/70 backdrop-blur-xl border-slate-700/50 shadow-lg' 
         : 'bg-transparent border-transparent py-2'
     }`}>
       <div className="container mx-auto px-6 h-full flex items-center justify-between">

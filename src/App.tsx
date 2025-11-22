@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
-
 import About from './pages/About';
 import Pricing from './pages/Pricing';
 import FeaturesPage from './pages/FeaturesPage';
@@ -13,9 +12,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="app">
+      <div className="min-h-screen flex flex-col bg-slate-950 text-slate-300 font-sans selection:bg-emerald-500/30">
         <Navbar />
-        <main>
+        <main className="flex-grow relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

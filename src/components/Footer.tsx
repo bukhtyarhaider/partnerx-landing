@@ -1,50 +1,55 @@
 import { Wallet, Github, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <Link to="/" className="logo">
-              <Wallet className="logo-icon" size={24} />
-              <span className="logo-text">Partner<span className="text-primary">X</span></span>
+    <footer className="bg-slate-950 border-t border-slate-800/60 pt-20 pb-10 mt-auto relative z-10">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+          <div className="md:col-span-1">
+            <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white mb-6">
+              <Wallet className="text-[--color-primary]" size={24} />
+              <span>Partner<span className="text-[--color-primary]">X</span></span>
             </Link>
-            <p>
+            <p className="text-slate-400 max-w-xs leading-relaxed">
               Empowering partners to manage their shared finances with transparency and ease.
             </p>
           </div>
           
-          <div className="footer-links">
-            <div className="link-group">
-              <h4>Product</h4>
-              <Link to="/features">Features</Link>
-              <Link to="/pricing">Pricing</Link>
-              <a href="#">Roadmap</a>
+          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-10">
+            <div>
+              <h4 className="text-white font-semibold mb-6">Product</h4>
+              <div className="flex flex-col gap-4">
+                <Link to="/features" className="text-slate-400 hover:text-[--color-primary] transition-colors">Features</Link>
+                <Link to="/pricing" className="text-slate-400 hover:text-[--color-primary] transition-colors">Pricing</Link>
+                <a href="#" className="text-slate-400 hover:text-[--color-primary] transition-colors">Roadmap</a>
+              </div>
             </div>
-            <div className="link-group">
-              <h4>Company</h4>
-              <Link to="/about">About</Link>
-              <a href="#">Blog</a>
-              <a href="#">Careers</a>
+            <div>
+              <h4 className="text-white font-semibold mb-6">Company</h4>
+              <div className="flex flex-col gap-4">
+                <Link to="/about" className="text-slate-400 hover:text-[--color-primary] transition-colors">About</Link>
+                <a href="#" className="text-slate-400 hover:text-[--color-primary] transition-colors">Blog</a>
+                <a href="#" className="text-slate-400 hover:text-[--color-primary] transition-colors">Careers</a>
+              </div>
             </div>
-            <div className="link-group">
-              <h4>Legal</h4>
-              <Link to="/legal">Privacy</Link>
-              <Link to="/legal">Terms</Link>
-              <Link to="/legal">Security</Link>
+            <div>
+              <h4 className="text-white font-semibold mb-6">Legal</h4>
+              <div className="flex flex-col gap-4">
+                <Link to="/legal" className="text-slate-400 hover:text-[--color-primary] transition-colors">Privacy</Link>
+                <Link to="/legal" className="text-slate-400 hover:text-[--color-primary] transition-colors">Terms</Link>
+                <Link to="/legal" className="text-slate-400 hover:text-[--color-primary] transition-colors">Security</Link>
+              </div>
             </div>
           </div>
         </div>
         
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} PartnerWise Financial Management. Created by <a href="https://github.com/bukhtyarhaider" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)' }}>Bukhtyar Haider</a>.</p>
-          <div className="social-links">
-            <a href="#" aria-label="Github"><Github size={20} /></a>
-            <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+        <div className="border-t border-slate-800/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} PartnerWise Financial Management. Created by <a href="https://github.com/bukhtyarhaider" target="_blank" rel="noopener noreferrer" className="text-[--color-primary] hover:text-emerald-300">Bukhtyar Haider</a>.</p>
+          <div className="flex gap-6">
+            <a href="#" aria-label="Github" className="hover:text-[--color-primary] transition-colors"><Github size={20} /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-[--color-primary] transition-colors"><Twitter size={20} /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-[--color-primary] transition-colors"><Linkedin size={20} /></a>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Hero() {
             Secure, private, and free forever.
           </p>
           <div className="flex flex-wrap gap-6 mb-16">
-            <button className="btn btn-primary flex items-center gap-2">
+            <button className="btn btn-primary flex items-center gap-2" onClick={() => window.location.href = 'https://partnerx.vercel.app/'}>
               Start Dashboard <ArrowRight size={20} />
             </button>
             <a href="https://github.com/bukhtyarhaider" target="_blank" rel="noopener noreferrer" className="btn btn-outline flex items-center gap-2">

@@ -25,7 +25,7 @@ export default function Navbar() {
           <span className="tracking-tight">Partner<span className="text-[--color-primary]">X</span></span>
         </Link>
         <div className="hidden md:flex items-center gap-10">
-          {['Features', 'About', 'Pricing'].map((item) => (
+          {['Home','Features', 'About', 'Pricing'].map((item) => (
             <Link 
               key={item}
               to={`/${item.toLowerCase()}`} 
@@ -35,7 +35,7 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[--color-primary] transition-all duration-300 rounded-full group-hover:w-full"></span>
             </Link>
           ))}
-          <a href="#" className="btn btn-primary">
+          <a href="https://partnerx.vercel.app/" className="btn btn-primary">
             Get Started
           </a>
         </div>

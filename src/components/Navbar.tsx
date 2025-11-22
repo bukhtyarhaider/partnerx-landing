@@ -1,9 +1,12 @@
-import { Wallet } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Wallet } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar() {
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,33 +16,100 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Features', path: '/features' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 h-20 z-50 border-b transition-all duration-300 ${
-      scrolled 
-        ? 'bg-slate-800/70 backdrop-blur-xl border-slate-700/50 shadow-lg' 
-        : 'bg-transparent border-transparent py-2'
-    }`}>
-      <div className="container mx-auto px-6 h-full flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 text-2xl font-bold text-white transition-transform duration-200 hover:scale-105">
-          <Wallet className="text-[--color-primary] drop-shadow-[0_0_8px_rgba(0,185,141,0.4)]" size={32} />
-          <span className="tracking-tight">Partner<span className="text-[--color-primary]">X</span></span>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? 'glass-navbar py-3' : 'bg-transparent py-5'
+      }`}
+    >
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-emerald-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
+            <Wallet className="w-8 h-8 text-emerald-400 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <span className="text-2xl font-bold text-white tracking-tight">
+            Partner<span className="text-emerald-400">X</span>
+          </span>
         </Link>
-        <div className="hidden md:flex items-center gap-10">
-          {['Home','Features', 'About', 'Pricing'].map((item) => (
-            <Link 
-              key={item}
-              to={`/${item.toLowerCase()}`} 
-              className="font-medium text-slate-400 transition-colors duration-200 hover:text-white relative group text-sm uppercase tracking-wider"
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`text-sm font-medium transition-colors duration-300 relative group ${
+                location.pathname === link.path ? 'text-emerald-400' : 'text-slate-300 hover:text-white'
+              }`}
             >
-              {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[--color-primary] transition-all duration-300 rounded-full group-hover:w-full"></span>
+              {link.name}
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-emerald-400 transition-all duration-300 ${
+                location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
           ))}
-          <a href="https://partnerx.vercel.app/" className="btn btn-primary">
+          <Link to="/pricing" className="btn-primary px-5 py-2 text-sm rounded-lg">
             Get Started
-          </a>
+          </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
-    </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden glass-navbar border-t border-white/5 overflow-hidden"
+          >
+            <div className="flex flex-col p-6 gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-lg font-medium transition-colors ${
+                    location.pathname === link.path ? 'text-emerald-400' : 'text-slate-300'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link to="/pricing" className="btn-primary w-full text-center mt-2">
+                Get Started
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
-}
+};
+
+export default Navbar;

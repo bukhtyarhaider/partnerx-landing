@@ -7,12 +7,13 @@ import About from './pages/About';
 import Pricing from './pages/Pricing';
 import FeaturesPage from './pages/FeaturesPage';
 import Legal from './pages/Legal';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800/50 to-slate-900 text-slate-300 font-sans selection:bg-[--color-primary]/30">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-300 font-sans selection:bg-emerald-500/30">
         <Navbar />
         <main className="flex-grow relative z-10">
           <Routes>
@@ -22,6 +23,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
